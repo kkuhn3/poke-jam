@@ -1,0 +1,120 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<script src="pokedex.js"></script>
+		<script src="load.js"></script>
+		<script src="lobby.js"></script>
+		<script src="game.js"></script>
+		<script src="conclusion.js"></script>
+		<script src="websocket.js"></script>
+		<script src="autocomplete.js"></script>
+	</head>
+	<body>
+		<div id="lobby">
+			<div id="players">
+				<div id="one" class="box"></div>
+				<div id="two" class="box"></div>
+				<div id="three" class="box"></div>
+				<div id="four" class="box"></div>
+				<div id="five" class="box"></div>
+			</div>
+			<div id="lobbyButtons" class="inputs">
+				<button id="start" onclick="startGame(true)">
+					Start
+				</button>
+			</div>
+		</div>
+		<div id="game">
+			<div id="jam">
+				<div id="gen" class="box"></div>
+				<div id="typeone" class="box"></div>
+				<div id="typetwo" class="box"></div>
+				<div id="stage" class="box"></div>
+				<div id="ability" class="box"></div>
+			</div>
+			<div id="gameButtons" class="inputs">
+				<div class="autocomplete">
+					<input id="hint" type="text" placeholder="Hint Here">
+				</div>
+				<button id="submit" onclick="submitHint(hint.value)">Submit</button>
+			</div>
+		</div>
+		<div id="waiting">
+			Waiting for other players...
+		</div>
+		<div id="conclusion">
+			<div id="hintSet">
+				<table id="hintTable">
+				</table>
+				<div id="grade0" class="gradeBox">
+					<div id="grade0-left" class="gradeLeft">
+						?
+					</div>
+					<div id="grade0-top" class="gradeTop">
+						Gave ?. Got ?/?.
+					</div>
+					<div id="grade0-bottom" class="gradeBottom">
+						? / ?
+					</div>
+				</div>
+				<div id="grade1" class="gradeBox">
+					<div id="grade1-left" class="gradeLeft">
+						?
+					</div>
+					<div id="grade1-top" class="gradeTop">
+						Gave ?. Got ?/?.
+					</div>
+					<div id="grade1-bottom" class="gradeBottom">
+						? / ?
+					</div>
+				</div>
+				<div id="grade2" class="gradeBox">
+					<div id="grade2-left" class="gradeLeft">
+						?
+					</div>
+					<div id="grade2-top" class="gradeTop">
+						Gave ?. Got ?/?.
+					</div>
+					<div id="grade2-bottom" class="gradeBottom">
+						? / ?
+					</div>
+				</div>
+				<div id="grade3" class="gradeBox">
+					<div id="grade3-left" class="gradeLeft">
+						?
+					</div>
+					<div id="grade3-top" class="gradeTop">
+						Gave ?. Got ?/?.
+					</div>
+					<div id="grade3-bottom" class="gradeBottom">
+						? / ?
+					</div>
+				</div>
+				<div id="grade4" class="gradeBox">
+					<div id="grade4-left" class="gradeLeft">
+						?
+					</div>
+					<div id="grade4-top" class="gradeTop">
+						Gave ?. Got ?/?.
+					</div>
+					<div id="grade4-bottom" class="gradeBottom">
+						? / ?
+					</div>
+				</div>
+			</div>
+			<div id="gameButtons" class="inputs">
+				<div class="autocomplete">
+					<input id="guess" type="text" placeholder="Who's that Pokemon?">
+				</div>
+				<button id="final" onclick="finalGuess(guess.value)">Guess</button>
+			</div>
+		</div>
+	</body>
+	<script>
+		(async() => {
+			socketStart();
+			autocomplete(hint);
+			autocomplete(guess);
+		})();
+	</script>
+</html>
