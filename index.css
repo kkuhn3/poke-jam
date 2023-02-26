@@ -8,6 +8,16 @@ body {
 	overflow-y: scroll;
 }
 
+.spoiler { 
+	color: #555555; 
+	background-color: #555555;
+}
+
+.spoiler:hover { 
+	background-color: #333333;
+	color: #dddddd;
+}
+
 .box {
 	width: 14vw;
 	margin-left: 4.5vw;
@@ -49,8 +59,9 @@ body {
 	margin-right: 1%;
 }
 
-span {
-	font-size: 2vw;
+input[type=checkbox] {
+    width:2vw;
+    height:2vw;
 }
 
 #game {

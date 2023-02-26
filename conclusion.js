@@ -192,12 +192,15 @@ function drawGuesses() {
 				leftSide.style.color = "red";
 			}
 			topSide.innerHTML = "Gave " + moGuesses[k].givenHints + ". Got " + moGuesses[k].correctHints + "/" + moGuesses[k].recievedHints;
-			bottomSide.innerHTML = moGuesses[k].guess + " / " + moGuesses[k].answer;
+			bottomSide.innerHTML = moGuesses[k].guess + ' / <span class="spoiler">' +  moGuesses[k].answer + '</span>';
 		}
 	}
 }
 
 function finalGuess(pokemonName) {
+	if(!moPokemon[pokemonName]) {
+		return false;
+	}
 	const myMon = moPokemon[pokemonName];
 	let i = 0;
 	let correctCount = 0;
