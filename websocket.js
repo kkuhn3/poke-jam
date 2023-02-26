@@ -13,7 +13,7 @@ if(localStorage.getItem('kpow2Pings') != null){
 }
 
 function socketStart() {
-	socket = new WebSocket("ws://127.0.0.1:7979");
+	socket = new WebSocket(websocketURL);
 	
 	socket.addEventListener('open', function (event) {
 		socket.send('{"party":"pokejam"}');

@@ -125,7 +125,38 @@ function generateMapOfPokemon() {
 }
 
 function getGens() {
-	return [1, 2, 3, 4, 5, 6, 7, 8, 9];
+	coolGens = [];
+	if(g1.checked) {
+		coolGens.push(1);
+	}
+	if(g2.checked) {
+		coolGens.push(2);
+	}
+	if(g3.checked) {
+		coolGens.push(3);
+	}
+	if(g4.checked) {
+		coolGens.push(4);
+	}
+	if(g5.checked) {
+		coolGens.push(5);
+	}
+	if(g6.checked) {
+		coolGens.push(6);
+	}
+	if(g7.checked) {
+		coolGens.push(7);
+	}
+	if(g8.checked) {
+		coolGens.push(8);
+	}
+	if(g9.checked) {
+		coolGens.push(9);
+	}
+	if(coolGens.length < 1) {
+		return [1, 2, 3, 4, 5, 6, 7, 8, 9];
+	}
+	return coolGens;
 }
 
 function getMonFromName(pokemonName) {
